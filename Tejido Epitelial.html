@@ -1,0 +1,1505 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atlas Digital de Histología Tejidos</title>
+    <link rel="shortcut icon" href="images/UNEFM-Logo-Vector.svg-.png">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root {
+	--primary-color: #00a2ff;
+	--background-color: #f9f5f0;
+	--dark-color: #151515;
+
+}
+
+html {
+	font-size: 78%;
+	font-family: 'Poppins', sans-serif;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+/* ********************************** */
+/*             UTILIDADES             */
+/* ********************************** */
+.container {
+	max-width: 120rem;
+	margin: 0 auto;
+}
+
+.heading-1 {
+	text-align: center;
+	font-weight: 500;
+	font-size: 3rem;
+}
+
+/* ********************************** */
+/*               HEADER               */
+/* ********************************** */
+.container-hero {
+	background-color: var(--background-color);
+}
+
+.hero {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 2rem 0;
+}
+
+.customer-support {
+	display: flex;
+	align-items: center;
+	gap: 2rem;
+}
+
+.customer-support i {
+	font-size: 3.3rem;
+}
+
+.content-customer-support {
+	display: flex;
+	flex-direction: column;
+}
+
+.container-logo {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+}
+
+.container-logo i {
+	font-size: 3rem;
+}
+
+.container-logo h1 a {
+	text-decoration: none;
+	color: #000;
+	font-size: 3rem;
+	text-transform: uppercase;
+	letter-spacing: -1px;
+}
+
+.container-user {
+	display: flex;
+	gap: 1rem;
+	cursor: pointer;
+}
+
+.container-user .fa-user {
+	font-size: 3rem;
+	color: var(--primary-color);
+	padding-right: 2.5rem;
+	border-right: 1px solid #e2e2e2;
+}
+
+.container-user .fa-basket-shopping {
+	font-size: 3rem;
+	color: var(--primary-color);
+	padding-left: 1rem;
+}
+
+.content-shopping-cart {
+	display: flex;
+	flex-direction: column;
+}
+
+
+/* ********************************** */
+/*               BANNER               */
+/* ********************************** */
+.banner {
+	background-image: linear-gradient(100deg, #0b0c6b, #00000020),
+		url('images/banner.jpg');
+	height: 60rem;
+	background-size: cover;
+	background-position: center;
+}
+
+.content-banner {
+	max-width: 90rem;
+	margin: 0 auto;
+	padding: 25rem 0;
+}
+
+.content-banner p {
+	color: var(--primary-color);
+	font-size: 1.2rem;
+	margin-bottom: 1rem;
+	font-weight: 500;
+}
+
+.content-banner h2 {
+	color: #fff;
+	font-size: 3.5rem;
+	font-weight: 500;
+	line-height: 1.2;
+}
+
+.content-banner a {
+	margin-top: 2rem;
+	text-decoration: none;
+	color: #fff;
+	background-color: var(--primary-color);
+	display: inline-block;
+	padding: 1rem 3rem;
+	text-transform: uppercase;
+	border-radius: 3rem;
+    font-size: 80%;
+}
+
+/* ************* NAVBAR ************* */
+.container-navbar {
+	background-color: var(--primary-color);
+}
+
+.navbar {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 1rem 0;
+}
+
+.navbar .fa-bars {
+	display: none;
+}
+
+.menu {
+	display: flex;
+	gap: 2rem;
+}
+
+.menu li {
+	list-style: none;
+}
+
+.menu a {
+	text-decoration: none;
+	font-size: 1.3rem;
+	color: var(--dark-color);
+	font-weight: 600;
+	text-transform: uppercase;
+	position: relative;
+}
+
+.menu a::after {
+	content: '';
+	width: 1.5rem;
+	height: 1px;
+	background-color: #fff;
+	position: absolute;
+	bottom: -3px;
+	left: 50%;
+	transform: translate(-50%, 50%);
+	opacity: 0;
+	transition: all 0.3s ease;
+}
+
+.menu a:hover::after {
+	opacity: 1;
+}
+
+.menu a:hover {
+	color: #fff;
+}
+
+.search-form {
+	position: relative;
+	display: flex;
+	align-items: center;
+	border: 2px solid #fff;
+	border-radius: 2rem;
+	background-color: #fff;
+	height: 4.4rem;
+	overflow: hidden;
+}
+
+.search-form input {
+	outline: none;
+	font-family: inherit;
+	border: none;
+	width: 25rem;
+	font-size: 1.4rem;
+	padding: 0 2rem;
+	color: #777;
+	cursor: pointer;
+}
+
+.search-form input::-webkit-search-cancel-button {
+	appearance: none;
+}
+
+.search-form .btn-search {
+	border: none;
+	background-color: var(--primary-color);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100%;
+	padding: 1rem;
+}
+
+.btn-search i {
+	font-size: 2rem;
+	color: #fff;
+}
+
+.main-content {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 2rem;
+}
+
+.section-title {
+    color: var(--secondary-color);
+    font-size: 2.5rem;
+    margin: 2rem 0;
+    text-align: center;
+    position: relative;
+    padding-bottom: 1rem;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 4px;
+    background: var(--accent-color);
+}
+
+.tissue-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.card {
+    background: var(--white);
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    overflow: hidden;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(0,0,0,0.1);
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.card-image-container {
+    position: relative;
+    height: 250px;
+    overflow: hidden;
+    border-bottom: 3px solid var(--accent-color);
+}
+
+.card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.card:hover .card-image {
+    transform: scale(1.1);
+}
+
+.card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        rgba(8, 43, 92, 0.8),
+        rgba(13, 89, 139, 0.8)
+    );
+    color: var(--white);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    padding: 2rem;
+    text-align: center;
+}
+
+.card-overlay h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--accent-color);
+}
+
+.card-image-container:hover .card-overlay {
+    opacity: 1;
+}
+
+.card-content {
+    padding: 2rem;
+}
+
+.card-title {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    border-bottom: 2px solid var(--light-accent);
+    padding-bottom: 0.5rem;
+}
+
+.card-description {
+    margin-bottom: 1.5rem;
+    color: var(--text-color);
+    line-height: 1.8;
+}
+
+.card-details {
+    display: none;
+    background: var(--light-gray);
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-top: 1.5rem;
+    border-left: 4px solid var(--accent-color);
+}
+
+.show-details-btn {
+    background: var(--secondary-color);
+    color: var(--white);
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 6px;
+    cursor: pointer;
+    width: 100%;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.show-details-btn:hover {
+    background: var(--primary-color);
+    transform: translateY(-2px);
+}
+
+
+/* Container */
+
+.container {
+    margin: 0 auto;
+    max-width: 100%;
+    width: 68em;
+}
+
+    @media screen and (max-width: 1680px) {
+
+        .container {
+            width: 70em;
+        }
+
+    }
+
+    @media screen and (max-width: 1280px) {
+
+        .container {
+            width: calc(100% - 100px);
+        }
+
+    }
+
+    @media screen and (max-width: 980px) {
+
+        .container {
+            width: calc(100% - 100px);
+        }
+
+    }
+
+    @media screen and (max-width: 736px) {
+
+        .container {
+            width: calc(100% - 40px);
+        }
+
+    }
+
+/* Row */
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    align-items: stretch;
+}
+
+    .row > * {
+        box-sizing: border-box;
+    }
+
+    .row.gtr-uniform > * > :last-child {
+        margin-bottom: 0;
+    }
+
+    .row.aln-left {
+        justify-content: flex-start;
+    }
+
+    .row.aln-center {
+        justify-content: center;
+    }
+
+    .row.aln-right {
+        justify-content: flex-end;
+    }
+
+    .row.aln-top {
+        align-items: flex-start;
+    }
+
+    .row.aln-middle {
+        align-items: center;
+    }
+
+    .row.aln-bottom {
+        align-items: flex-end;
+    }
+
+    .row > .imp {
+        order: -1;
+    }
+
+    .row > .col-1 {
+        width: 8.33333%;
+    }
+
+    .row > .off-1 {
+        margin-left: 8.33333%;
+    }
+
+    .row > .col-2 {
+        width: 16.66667%;
+    }
+
+    .row > .off-2 {
+        margin-left: 16.66667%;
+    }
+
+    .row > .col-3 {
+        width: 25%;
+    }
+
+    .row > .off-3 {
+        margin-left: 25%;
+    }
+
+    .row > .col-4 {
+        width: 33.33333%;
+    }
+
+    .row > .off-4 {
+        margin-left: 33.33333%;
+    }
+
+    .row > .col-5 {
+        width: 41.66667%;
+    }
+
+
+    .row > .col-9 {
+        width: 75%;
+    }
+
+    .row > .off-9 {
+        margin-left: 75%;
+    }
+
+    .row > .col-10 {
+        width: 83.33333%;
+    }
+
+    .row > .off-10 {
+        margin-left: 83.33333%;
+    }
+
+    .row > .col-11 {
+        width: 91.66667%;
+    }
+
+    .row > .off-11 {
+        margin-left: 91.66667%;
+    }
+
+   
+   
+
+    .row.gtr-0 {
+        margin-top: 0px;
+        margin-left: 0px;
+    }
+
+        .row.gtr-0 > * {
+            padding: 0px 0 0 0px;
+        }
+
+        .row.gtr-0.gtr-uniform {
+            margin-top: 0px;
+        }
+
+            .row.gtr-0.gtr-uniform > * {
+                padding-top: 0px;
+            }
+
+    .row.gtr-25 {
+        margin-top: -12.5px;
+        margin-left: -12.5px;
+    }
+
+        .row.gtr-25 > * {
+            padding: 12.5px 0 0 12.5px;
+        }
+
+        .row.gtr-25.gtr-uniform {
+            margin-top: -12.5px;
+        }
+
+            .row.gtr-25.gtr-uniform > * {
+                padding-top: 12.5px;
+            }
+
+    .row.gtr-50 {
+        margin-top: -25px;
+        margin-left: -25px;
+    }
+
+        .row.gtr-50 > * {
+            padding: 25px 0 0 25px;
+        }
+
+        .row.gtr-50.gtr-uniform {
+            margin-top: -25px;
+        }
+
+            .row.gtr-50.gtr-uniform > * {
+                padding-top: 25px;
+            }
+
+    .row {
+        margin-top: -50px;
+        margin-left: -50px;
+    }
+
+        .row > * {
+            padding: 50px 0 0 50px;
+        }
+
+        .row.gtr-uniform {
+            margin-top: -50px;
+        }
+
+            .row.gtr-uniform > * {
+                padding-top: 50px;
+            }
+
+    .row.gtr-150 {
+        margin-top: -75px;
+        margin-left: -75px;
+    }
+
+        .row.gtr-150 > * {
+            padding: 75px 0 0 75px;
+        }
+
+        .row.gtr-150.gtr-uniform {
+            margin-top: -75px;
+        }
+
+            .row.gtr-150.gtr-uniform > * {
+                padding-top: 75px;
+            }
+
+    .row.gtr-200 {
+        margin-top: -100px;
+        margin-left: -100px;
+    }
+
+        .row.gtr-200 > * {
+            padding: 100px 0 0 100px;
+        }
+
+        .row.gtr-200.gtr-uniform {
+            margin-top: -100px;
+        }
+
+            .row.gtr-200.gtr-uniform > * {
+                padding-top: 100px;
+            }
+
+
+
+
+/* Section/Article */
+
+section,
+article {
+    margin: 0 0 4em 0;
+}
+
+section > :last-child,
+article > :last-child,
+section:last-child,
+article:last-child {
+    margin-bottom: 0;
+}
+
+header.style1 {
+    text-align: center;
+    padding: 3em 0 3em 0;
+}
+
+    header.style1 h2 {
+        font-weight: 700;
+        font-size: 2em;
+        letter-spacing: 0.075em;
+        line-height: 1.5em;
+    }
+
+    header.style1 p {
+        color: #b1b4b9;
+        display: block;
+        margin: 1.15em 0 0 0;
+        font-size: 1.3em;
+        letter-spacing: 0.075em;
+        line-height: 1.5em;
+    }
+
+/* Table */
+
+
+
+
+/* Image */
+
+.image {
+    display: inline-block;
+}
+
+    .image img {
+        display: block;
+        width: 100%;
+    }
+
+    .image.fit {
+        display: block;
+        width: 100%;
+    }
+
+    .image.left {
+        float: left;
+        margin: 0 2em 2em 0;
+    }
+
+    .image.centered {
+        display: block;
+        margin: 0 0 2em 0;
+    }
+
+        .image.centered img {
+            margin: 0 auto;
+            width: auto;
+        }
+
+    .image.featured {
+        display: block;
+        width: 100%;
+        margin: 0 0 2em 0;
+    }
+
+
+
+/* Feature List */
+
+.feature-list {
+    max-width: 58em;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    top: 0.75em;
+}
+
+    .feature-list section {
+        border-top: solid 1px #d84444;
+        padding-top: 3em;
+        padding-left: 5em;
+        position: relative;
+    }
+
+    @media screen and (min-width: 981px) {
+
+        .feature-list > .row > :nth-child(-n + 2) > section {
+            border-top: 0;
+            padding-top: 0;
+        }
+
+    }
+
+    .feature-list h3 {
+        color: #e97770 !important;
+        margin: -0.35em 0 0.75em 0;
+        font-size: 1.15em;
+        letter-spacing: 0.05em;
+    }
+
+        .feature-list h3:before {
+            display: block;
+            color: #fff;
+            background: #2f333b url("images/overlay.png");
+            border-radius: 2.5em;
+            text-align: center;
+            width: 2.5em;
+            height: 2.5em;
+            line-height: 2.5em;
+            margin-right: 0.75em;
+            position: absolute;
+            left: 0;
+            margin-top: -0.5em;
+        }
+
+    .feature-list.small section {
+        padding-left: 3.5em;
+    }
+
+    .feature-list.small h3:before {
+        font-size: 0.8em;
+    }
+
+/* Icons */
+
+.icon {
+    text-decoration: none;
+    text-decoration: none;
+}
+
+    .icon:before {
+        -moz-osx-font-smoothing: grayscale;
+        -webkit-font-smoothing: antialiased;
+        display: inline-block;
+        font-style: normal;
+        font-variant: normal;
+        text-rendering: auto;
+        line-height: 1;
+        text-transform: none !important;
+        font-family: 'Font Awesome 5 Free';
+        font-weight: 400;
+    }
+
+    .icon:before {
+        line-height: inherit;
+        font-size: 1.25em;
+    }
+
+    .icon > .label {
+        display: none;
+    }
+
+    .icon.solid:before {
+        font-weight: 900;
+    }
+
+    .icon.brands:before {
+        font-family: 'Font Awesome 5 Brands';
+    }
+
+/* Box */
+
+.box header {
+    margin: 0 0 1.5em 0;
+}
+
+    .box header.style1 {
+        position: relative;
+        margin: -0.5em 0 0 0;
+        padding-top: 0;
+    }
+
+.box h2 {
+    margin: 0 0 0.75em 0;
+    font-size: 1.15em;
+    letter-spacing: 0.05em;
+}
+
+.box h3 {
+    margin: 0 0 0.5em 0;
+    font-size: 1em;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+}
+
+.box.post-excerpt .image.left {
+    position: relative;
+    top: 0.5em;
+    width: 5em;
+}
+
+.box.post-excerpt h3, .box.post-excerpt p {
+    margin-left: 7em;
+}
+
+/* Wrapper */
+
+.wrapper {
+    position: relative;
+    padding: 6em 0 9em 0;
+}
+
+    .wrapper .title {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        text-align: center;
+        text-transform: uppercase;
+        display: block;
+        font-weight: 700;
+        letter-spacing: 0.25em;
+        font-size: 0.9em;
+        width: 25em;
+        height: 3.25em;
+        top: -3.25em;
+        line-height: 3.25em;
+        margin-bottom: -3.25em;
+        margin-left: -12.5em;
+        padding-top: 0.5em;
+    }
+
+        .wrapper .title:before {
+            content: '';
+            position: absolute;
+            bottom: -38px;
+            left: -35px;
+            width: 35px;
+            height: 38px;
+            background: url("images/shadow.png");
+        }
+
+        .wrapper .title:after {
+            -moz-transform: scaleX(-1);
+            -webkit-transform: scaleX(-1);
+            -ms-transform: scaleX(-1);
+            transform: scaleX(-1);
+            content: '';
+            position: absolute;
+            bottom: -38px;
+            right: -35px;
+            width: 35px;
+            height: 38px;
+            background: url("images/shadow.png");
+        }
+
+    .wrapper.style1 {
+        background: #e97770 url("images/overlay.png");
+        color: #913636;
+        color: rgba(110, 32, 32, 0.75);
+    }
+
+        .wrapper.style1 .title {
+            background: #e97770 url("images/overlay.png");
+            color: #fff;
+        }
+
+        .wrapper.style1 h1, .wrapper.style1 h2, .wrapper.style1 h3, .wrapper.style1 h4, .wrapper.style1 h5, .wrapper.style1 h6, .wrapper.style1 strong, .wrapper.style1 b, .wrapper.style1 a {
+            color: #fff;
+        }
+
+    .wrapper.style2 {
+        background: #fff;
+    }
+
+        .wrapper.style2 .title {
+            background: #fff;
+            color: #484d55;
+        }
+
+    .wrapper.style3 {
+        background: #bcf1ef url("images/overlay.png");
+    }
+
+        .wrapper.style3 .title {
+            background: #f3f3f3 url("images/overlay.png");
+            color: #484d55;
+        }
+
+        .wrapper.style3 .image {
+            border: solid 10px #fff;
+        }
+
+/* Page Wrapper */
+
+#page-wrapper > section {
+    margin-bottom: 0;
+}
+
+/* Header */
+
+#header {
+    display: -moz-flex;
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+    -moz-align-items: center;
+    -webkit-align-items: center;
+    -ms-align-items: center;
+    align-items: center;
+    -moz-justify-content: center;
+    -webkit-justify-content: center;
+    -ms-justify-content: center;
+    justify-content: center;
+    position: relative;
+    height: 24em;
+    background: url("../../images/banner.jpg") center center;
+    background-size: cover;
+    padding: 0;
+}
+
+    #header:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: url("images/overlay.png");
+    }
+
+    .homepage #header {
+        height: 35em;
+    }
+
+/* Logo */
+
+#logo {
+    width: 100%;
+    text-align: center;
+    position: relative;
+    top: 1.5em;
+}
+
+    #logo h1 {
+        font-weight: 900;
+        text-transform: uppercase;
+        color: #fff;
+        font-size: 2em;
+        letter-spacing: 0.25em;
+    }
+
+    #logo p {
+        color: #eee;
+        color: rgba(255, 255, 255, 0.5);
+        text-transform: uppercase;
+        margin: 1.25em 0 0 0;
+        display: block;
+        letter-spacing: 0.2em;
+        font-size: 0.9em;
+    }
+
+
+.dropotron {
+    background: #222835 url("images/overlay.png");
+    background-color: rgba(44, 50, 63, 0.925);
+    padding: 1.25em 1em 1.25em 1em;
+    border-radius: 0.35em;
+    box-shadow: inset 0px 0px 1px 1px rgba(255, 255, 255, 0.25);
+    min-width: 12em;
+    text-align: left;
+    margin-top: -1.25em;
+    margin-left: -1px;
+    list-style: none;
+}
+
+    .dropotron.level-0 {
+        margin-top: -1px;
+        margin-left: 0;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+    }
+
+    .dropotron a, .dropotron span {
+        -moz-transition: all .25s ease-in-out;
+        -webkit-transition: all .25s ease-in-out;
+        -ms-transition: all .25s ease-in-out;
+        transition: all .25s ease-in-out;
+        display: block;
+        color: #eee;
+        color: rgba(255, 255, 255, 0.75);
+        text-transform: uppercase;
+        text-decoration: none;
+        font-size: 0.7em;
+        letter-spacing: 0.25em;
+        border-top: solid 1px rgba(255, 255, 255, 0.15);
+        line-height: 3em;
+    }
+
+    .dropotron li {
+        padding-left: 0;
+    }
+
+        .dropotron li:first-child a, .dropotron li:first-child span {
+            border-top: 0;
+        }
+
+        .dropotron li:hover > a, .dropotron li:hover > span {
+            color: #fff;
+        }
+
+/* Intro */
+
+#intro {
+    padding-bottom: 8em;
+    text-align: center;
+}
+
+    #intro p.style1 {
+        font-size: 1.5em;
+        letter-spacing: 0.075em;
+    }
+
+    #intro p.style2 {
+        font-weight: 700;
+        color: #fff;
+        border-radius: 0.35em;
+        box-shadow: inset 0px 0px 1px 1px rgba(255, 255, 255, 0.25);
+        font-size: 2.75em;
+        letter-spacing: 0.075em;
+        line-height: 1.35em;
+        padding: 1em 0 1em 0;
+        margin-bottom: 1em;
+    }
+
+        #intro p.style2 a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+    #intro p.style3 {
+        font-size: 1.1em;
+        width: 48em;
+        margin: 0 auto;
+    }
+
+/* Features */
+
+#features header.style1 {
+    padding-bottom: 5em;
+}
+
+#features ul.actions {
+    margin-top: 5em;
+}
+
+/* Highlights */
+
+#highlights .highlight {
+    text-align: center;
+}
+
+    #highlights .highlight h3 {
+        color: #e97770;
+        margin: 0 0 0.75em 0;
+        font-size: 1.15em;
+        letter-spacing: 0.05em;
+    }
+
+
+
+
+    /* ********************************** */
+/*               FOOTER               */
+/* ********************************** */
+
+.footer {
+	background-color: var(--primary-color);
+	color: var(#0b0c6b);
+            padding: 3rem 2rem;
+            text-align: center;
+            margin-top: 3rem;
+            border-top: 4px solid var(--accent-color);
+}
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container-hero">
+            <div class="container hero">
+                <div class="customer-support">
+                    <i class="fa-solid fa-headset"></i>
+                    <div class="content-customer-support">
+                        <span class="text">Recursos Educativos | Biblioteca Digital UNEFM</span>
+                        <span class="number">Departamento de Ciencias Morfológicas</span>
+                    </div>
+                </div>
+
+                <div class="container-logo">
+                    <i class="fa-solid fa-mug-hot"></i>
+                    <h1 class="logo"><a href="/">UNEFM</a></h1>
+                </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container-navbar">
+            <nav class="navbar container">
+                <i class="fa-solid fa-bars"></i>
+                <ul class="menu">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="tejidos.html">Tejidos</a></li>
+                    <li><a href="#">Preparaciones</a></li>
+                    
+                </ul>
+
+            </nav>
+        </div>
+    </header>
+
+    <section class="banner">
+        <div class="content-banner">
+            <p>Atlas Digital de Histología</p>
+            <h2>Tejido <br />Epitelial</h2>
+            <a href="#">Los epitelios son grupos que incluyen epitelios de revestimiento de superficie y órganos sólidos. 
+                Se refiere a la capas de células que recubren los órganos huecos y glándulas, también aquellas 
+                células que conforman la superficie exterior del cuerpo humano. O sea que recubre tanto la superficie 
+                interior como exterior como lo son las cavidades, conductos, órganos y los vasos sanguíneos</a>
+
+                <a href="#">El tejido epitelial está conformado por células epiteliales estrechamente unidas, con poco espacio entre ellas, 
+                    y con escasa matriz extracelular (MEC) entre ellas; se disponen en capas, que constituyen las cubiertas que protegen 
+                    al organismo, que se localizan en diferentes zonas como la piel, mucosa, peritoneo o en el revestimiento de conductos.
+                     No tienen un suministro directo de vasos sanguíneos, obtienen sus nutrientes a través de la difusión de los tejidos subyacentes. </a>
+        </div>
+    </section>
+
+
+    <main class="main-content">
+        
+
+
+                 <h2 class="section-title">Preparación</h2>
+
+        <p>En la tinción se aplican colorantes como hematoxilina y eosina para observar bajo el microscopio. En su obtención de muestra se toma 
+            una biopsia del tejido, su fijación se usa formaldehido u otro fijador para preservar la estructura celular, la deshidratación pasa por 
+            una serie de soluciones de alcohol para eliminar el agua, mientras el corte se usan los micrótomos para obtener secciones delgadas.  <br><br>
+
+            Este tejido cumple con diversas funciones como lo es la protección, secreción, absorción, transporte y la percepción sensorial, también 
+            se le agrega la eliminación de sustancias extrañas, reparación y otras moléculas.  
+            </p> <br> 
+
+
+              <main class="main-content">
+
+
+                
+        <div class="tissue-grid">
+            <div class="card">
+                <div class="card-image-container">
+                    <img src="images/proteccion.jpg" alt="Obtención de Material" class="card-image" >
+                    <div class="card-overlay">
+                        <h3>Protección</h3>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">Protección</h3>
+                    <p class="card-description">El epitelio protege los órganos y es la primera
+                         línea de defensa del cuerpo contra los desafíos medioambientales. Como por
+                          ejemplo el epitelio estratificado plano que protege la piel de la abrasión, 
+                          la desecación y invasión de patógenos. </p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-image-container">
+                    <img src="images/secrecion.jpg" alt="Fijación" class="card-image">
+                    <div class="card-overlay">
+                        <h3>Secreción</h3>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">Secreción</h3>
+                    <p class="card-description">La mayoría de las células epiteliales producen moco u otras secreciones. 
+                        Como por ejemplo las glándulas que producen o liberan muchas sustancias como lo son las lágrimas,
+                         sudor, saliva, hormonas, leche, entre otros.  </p>
+                </div>
+            </div>
+
+
+            <div class="card">
+                <div class="card-image-container">
+                    <img src="images/adsorcion.jpg" 
+                    alt="Procedimiento de Coloración" class="card-image">
+                    <div class="card-overlay">
+                    <h3>Absorción</h3>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">Absorción</h3>
+                    <p class="card-description">Facilita la absorción de nutrientes y agua en el intestino y riñones,
+                         también ayuda a procesar los alimentos para obtener energía. Como por ejemplo epitelio intestinal 
+                         que es una sola capa de células que recubre el intestino delgado y grueso, es la superficie mucosa 
+                         más grande del cuerpo. 
+                        </p>
+                        
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-image-container">
+                        <img src="images/transporte.jpg" 
+                        alt="Procedimiento de Coloración" class="card-image">
+                        <div class="card-overlay">
+                        <h3>Transporte</h3>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Transporte</h3>
+                        <p class="card-description">Este transporta las sustancias dentro y fuera de las células, a través 
+                            de la superficie apical y basal, este transporte puede ser paracelular o transcelular.  
+                            </p>
+                            
+                        </div>
+                    </div>
+
+
+                    <div class="card">
+                        <div class="card-image-container">
+                            <img src="images/perseccion sensorial.jpg" 
+                            alt="Procedimiento de Coloración" class="card-image">
+                            <div class="card-overlay">
+                            <h3>Percepción Sensorial</h3>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">Percepción Sensorial</h3>
+                            <p class="card-description">Capta y procesa las señales del entorno y las transforma 
+                                en impulsos nerviosos, esta transformación es realizada por células conocidas 
+                                como neuronas sensoriales receptores y se denomina transducción.   
+                                </p>
+                                
+                            </div>
+                        </div>
+            </div>
+        </div>
+    </main>
+
+    <section id="highlights" class="wrapper style3">
+        <div class="title">Características</div>
+        <div class="container">
+            <div class="row aln-center">
+                <div class="col-4 col-12-medium">
+                    <section class="highlight">
+                        <img src="images/Alta Densidad Celular.jpg" alt="" class="image featured" /> 
+                        <h3>Alta Densidad Celular</h3>
+                        <p> El epitelio se compone de células estrechamentes unidas entre si, a lo que
+                             minimiza el espacio intercelular y contribuye a la formación de barreras efectivas. </p>
+                       
+                    </section>
+                </div>
+                <div class="col-4 col-12-medium">
+                    <section class="highlight">
+                        <img src="images/Avascularidad.jpg" alt=""class="image featured"  />
+                        <h3>Avascularidad</h3>
+                        <p>El epitelio carece de los vasos sanguíneos, la nutrición y el oxígeno son suministradas a 
+                            través de la difusión desde los tejidos subyacentes, como lo es el tejido conectivo</p>
+                        
+                    </section>
+                </div>
+                <div class="col-4 col-12-medium">
+                    <section class="highlight">
+                        <img src="images/polaridad.jpg" alt="" class="image featured" />
+                        <h3>Polaridad</h3>
+                        <p>Las células epiteliales presentan una organización polar, con un dominio apical (superficie que se encuentra expuesta 
+                            al lumen o el exterior) y un dominio basal (que encuentra en unión con la membrana basal). La polaridad es crucial
+                             para las funciones del epitelio. </p>
+                        
+                    </section>
+        
+                </div>
+                <div class="col-4 col-12-m">
+                    <section class="highlight">
+                        <img src="images/REGENERACION.jpg" alt="" class="image featured"  />
+                        <h3>Regeneración</h3>
+                        <p>Son células epiteliales que poseen una alta capacidad de mitosis que
+                             le permite regenerarse rápido en dar respuesta ante lesiones o degaste. </p>
+                        
+                    </section>
+                </div>
+
+                    <div class="col-4 col-12-medium">
+                        <section class="highlight">
+                            <img src="images/UNIONES CELULARES.jpg" alt="" class="image featured" />
+                            <h3>Uniones Intercelulares</h3>
+                            <p>Células epiteliales que se encuentran unidas por diversas 
+                                estructuras de unión, como las uniones  estrechas, los desmosomas
+                                 y uniones gap, el cual permiten la cohesión y la comunicación intercelular.  </p>
+                            
+                        </section>
+                    </div>
+
+                        <div class="col-4 col-12-medium">
+                            <section class="highlight">
+                                <img src="images/membrana basal.jpg" alt="" class="image featured" />
+                                <h3>Menbrana Basal</h3>
+                                <p>Este tejido se encuentra anclado a una membrana basa, que es una capa delgada de matriz 
+                                    extracelular que proporciona un soporte estructural y anclaje, además de regular el intercambio
+                                     de sustancias entre el epitelio y el tejido conectivo subyacente.  </p>
+                                
+                            </section>
+                        </div>
+
+                     <div class="col-4 col-12-riht">
+                            <section class="highlight">
+                                <img src="images/diferenciacion funcional.jpg" alt="" class="image featured" />
+                                <h3>Diferenciación Funcional</h3>
+                                <p>Las células epiteliales pueden especializarse en diversas funciones, como secreción,
+                                         absorción y percepción sensorial, lo que se traduce en variaciones en la morfología 
+                                         celular según el tipo de epitelio.  </p>
+                                    
+                            </section>
+                     </div>
+
+                    <div class="col-4 col-12-medium">
+                            <section class="highlight">
+                                 <img src="images/INERVACION.png" alt="" class="image featured" />
+                                 <h3>Inervación </h3>
+                                 <p>Aunque el tejido epitelial es avascular, esta inervado por
+                                             terminaciones nerviosas que permiten la percepción sensorial 
+                                             y la respuesta a estímulos externos.  </p>
+                                        
+                         </section>
+                    </div>
+
+                                    <div class="col-4 col-12-medium">
+                                        <section class="highlight">
+                                            <img src="images/adapta.jpg" alt="" class="image featured" />
+                                            <h3>Adaptabilidad</h3>
+                                            <p>Los tejidos epiteliales pueden adaptarse a diferentes microambientes y condiciones fisiológicas,
+                                                 lo que les permite desempeñar funciones específicas en órganos diversos </p>
+                                        </section>
+                                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <p>El tejido epitelial se encuentra estructurado por una composición celular que es en donde se agrupan las células epiteliales de forma densa,
+         formando copas continuas, estas células están unidas entre si mediante uniones intercelulares que incluyen: las uniones estrechas que impiden
+          el paso de sustancias entre células, los desmosomas que brindan una resistencia mecánica al tejido, anclándolas entre si y las uniones gap, 
+          que permiten la comunicación entre ellas. </p> <br>
+
+        <p>También cuenta con una polaridad celular, en la cual el dominio apical se encuentra en contacto con la superficie del medio externo
+             o el lumen del órgano. La basal se adhiere a la membrana basa que es una capa delgada de matriz extracelular que proporciona soporte 
+             y anclaje. Y la membrana basal que separa el epitelio con el tejido conectivo. </p>
+
+
+
+
+             <main class="main-content">
+                <h2 class="section-title">Terminos Fundamentales</h2>
+                
+                <div class="tissue-grid">
+                    <div class="card">
+                        <div class="card-image-container">
+                            <img src="images/revestimientp.jpg" alt="Epitelios de Revestimiento" class="card-image">
+                            <div class="card-overlay">
+                                <a href="Tejido Epitelial.html"><h3>Epitelios de Revestimiento </h3></a>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">Epitelios de Revestimiento</h3>
+                            <p class="card-description">Son un tipo especializado de tejido epitelial que recubre y protege las
+                                 Superficies internas y externas del cuerpo, asi como los órganos y cavidades</p>
+                                 <h4>Características Principales:</h4>
+                                • Estructura celular compacta <br>
+                                • Organización en capas<br>
+                                • Polaridad apicobasal<br>
+                                • En su estructura pueden ser simple o estratificadas
+                          
+                            <div class="card-details">
+                                
+                            </div>
+                        </div>
+                    </div>
+        
+                    <div class="card">
+                        <div class="card-image-container">
+                            <img src="images/embriologioco.jpg" alt="Origen Embriológico" class="card-image">
+                            <div class="card-overlay">
+                                <h3>Origen Embriológico</h3>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">Origen Embriológico </h3>
+                            <p class="card-description">Los tejidos epiteliales se originan del ectodermo, mesodermo y endodermo durante el desarrollo embrionario</p>
+                                <h4>Por Ejemplo:</h4>
+                                • <strong>Ectodermo: </strong> Da origen a la epidermis y al sistema nervioso <br>
+                                • <strong> Mesodermo:</strong> forma epitelios en los sistemas circulatorio y reproductor.<br>
+                                • <strong>Endodermo:</strong> origina el epitelio de los órganos internos como el hígado y los pulmones.<br>
+                        
+                        </div>
+                    </div>
+        
+                    <div class="card">
+                        <div class="card-image-container">
+                            <img src="images/glandulas.jpg" alt="Glándulas " class="card-image">
+                            <div class="card-overlay">
+                                <h3>Glándulas</h3>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">Glándulas </h3>
+                            <p class="card-description">Son estructuras que van derivadas del tejido epitelial que se especializa en la producción y secreción de sustancias</p>
+                        
+                                <h4>Tipos y Características:</h4>
+                                • <strong> gándulas Exocrinas: </strong>Secretan sus productos a través de conductos hacia el exterior, como por ejemplo las glándulas sudoríparas. <br>
+                                •<strong> Glándulas Endocrinas:</strong> Secretan hormonas directamente al torrente sanguíneo, como por ejemplo las glándulas tiroides.  
+                        
+                        </div>
+                    </div>
+        
+                    <div class="card">
+                        <div class="card-image-container">
+                            <img src="images/membrana basal1.jpg" alt="Membrana Basal o" class="card-image">
+                            <div class="card-overlay">
+                                <h3>Membrana Basal </h3>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">Membrana Basal </h3>
+                            <p class="card-description">Es una capa delgada pero altamente especializada de matriz extracelular
+                                 que separa los tejidos epiteliales y endoteliales del tejido conectivo subyacente.</p>
+                        
+                                <h4>Su estructura se conforma por:</h4>
+                                •<strong> Lamina basal:</strong> contiene colágeno tipo IV, laminina, entactina y proteoglicanos.  <br>
+                                • <strong>Lamina reticular:</strong> Formada por fibras de colágeno tipo III y fibras de anclaje, producidas por células del tejido conectivo subyacente.  
+                        
+                        </div>
+                    </div>
+                </div>
+            </main>
+            <footer class="footer">
+                <div class="container container-footer">
+                    <p>© 2025 Atlas Digital UNEFM - Departamento de Ciencias Morfológicas</p>
+                    <p>Universidad Nacional Experimental Francisco de Miranda</p>
+                    <p>Desarrollado con fines educativos</p>
+                </div>
+            </footer>
+    
+</body>
+</html>
